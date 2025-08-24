@@ -17,7 +17,7 @@ RUN pecl install gmagick-2.0.6RC1 \
 
 COPY --chown=www-data:www-data config/photon/config.php /var/www/photon/config.php
 
-RUN svn checkout --non-interactive http://code.svn.wordpress.org/photon/ /var/www/photon \
+RUN svn checkout -r645 --non-interactive http://code.svn.wordpress.org/photon/ /var/www/photon \
 	&& rm -rf /var/www/photon/.svn /var/www/photon/tests \
 	&& chown -R www-data:www-data /var/www/photon
 
